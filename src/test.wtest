@@ -3,7 +3,7 @@ import clientes.*
 
 describe "testing de anaMaria" {
 
-test "ana maria esta economicamente estable" {
+test "ana maria esta econo	micamente estable" {
 
 	assert.that(ana.estaEstable())
 
@@ -75,5 +75,35 @@ describe "testing de juana"{
 	}
 	test "cobra 200 a ludmila en 8 kilometros"{
 		assert.equals(200, juana.precioPorViaje(10, ludmila))
+	}
+}
+
+describe "testing de lucia" {
+	test "no se puede reemplazar a si misma"{
+		assert.throwsExceptionWithMessage("no se puede reemplazar a si mismo", {lucia.estaReemplazando(lucia)})
+	}
+	
+	test "no lanza excepcion"{
+		assert.doesNotThrowException({lucia.estaReemplazando(roxana)})
+		
+	}
+	test "reemplazo de roxana"{
+		lucia.estaReemplazando(roxana)
+		assert.equals(180, lucia.precioPorViaje(10, ludmila))
+	}
+}
+
+describe "testing de melna" {
+	test "no se puede contratar a si misma"{
+		assert.throwsExceptionWithMessage("no se puede contratar a si mismo", {melina.trabajaPara(melina)})
+	}
+	
+	test "no lanza excepcion"{
+		assert.doesNotThrowException({melina.trabajaPara(ludmila)})
+		
+	}
+	test "trabaja para ludmila"{
+		melina.trabajaPara(ludmila)
+		assert.equals(15, melina.precioPorKilometro())
 	}
 }

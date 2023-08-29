@@ -30,4 +30,40 @@ object juana{
 		}
 	} 
 }
+
+object lucia{
+	var estaReemplazando
+	
+	method estaReemplazando() = estaReemplazando
+	
+	method estaReemplazando(remisera) {
+		if (self == remisera){
+			self.error("no se puede reemplazar a si mismo")
+		}
+		estaReemplazando = remisera
+	}
+	
+	method precioPorViaje(kilometros, pasajero){
+		return estaReemplazando.precioPorViaje(kilometros, pasajero)
+	}
+}
+
+object melina{
+	var trabajaPara
+	
+	method trabajaPara() = trabajaPara
+	
+	method trabajaPara(clienta) {
+		if (self == clienta){
+			self.error("no se puede contratar a si mismo")
+		}
+		trabajaPara = clienta
+	}
+	
+	method precioPorKilometro(){
+		return trabajaPara.precioPorKilometro() - 3
+	}
+}
+
+
     
