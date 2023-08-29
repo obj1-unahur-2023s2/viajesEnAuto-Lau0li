@@ -1,23 +1,6 @@
-object ludmila {
-	
-	method precioPorKilometro() = 18
-}
-object ana{
-	var estaEstable = true
-		
-	method precioPorKilometro(){
-		if (estaEstable){
-			return 30
-		} 
-		else{
-			return 25
-		}
-	}
-}
-object teresa{
-	var property precioPorKilometro = 22
-	
-}
+import clientes.*
+
+
 
 object roxana {
 	
@@ -33,17 +16,17 @@ object gabriela {
 
 object mariela {
 	
-	method precioPorViaje(kilometros, pasajero) = 50.min(pasajero.precioPorKilometro() * kilometros)
+	method precioPorViaje(kilometros, pasajero) = 50.max(pasajero.precioPorKilometro() * kilometros)
 }
 
 object juana{
 	
-	method precioPorViaje(kilometros, pasajero){
-		if (kilometros > 8){
-			return 200
+	method precioPorViaje(kilometros,_){
+		 return if (kilometros > 8){
+			200
 		}
 		else {
-			return 100
+			100
 		}
 	} 
 }
